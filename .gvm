@@ -1,0 +1,10 @@
+############
+#
+# change go version
+#
+############
+#!/bin/env zsh
+user=$(whoami)
+export GOROOT="/usr/local/go/"$1
+export GOPATH="/Users/$user/go"
+export PATH=$(echo $PATH | tr ":" "\n" | grep -v "/usr/local/go*" | grep -v $GOPATH | tr "\n" ":")$GOROOT/bin:$GOPATH/bin
